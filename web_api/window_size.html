@@ -1,0 +1,34 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .tag {
+            display: inline-block;
+            background-color: thistle;
+            padding: 16px;
+            margin-top: 16px;
+            font-size: 40px;
+        }
+    </style>
+</head>
+<body>
+    <div class="tag">windowsize</div>
+    <script>
+        const tag = document.querySelector('.tag')
+
+        function updataTag() {
+            tag.innerHTML = `
+            window.screen: ${window.screen.width}, ${screen.height}<br>
+            window.outer: ${window.outerWidth}, ${window.outerHeight}<br>
+            window.outer: ${window.innerWidth}, ${window.innerHeight}<br>
+            documentElemnent.clientWidth: ${document.documentElement.clientWidth}, ${document.documentElement.clientHeight}
+            `
+        }
+        window.addEventListener('resize', updataTag)
+        updataTag()
+    </script>
+</body>
+</html>
