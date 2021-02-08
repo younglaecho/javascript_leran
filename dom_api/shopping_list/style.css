@@ -1,0 +1,97 @@
+body {
+    background-color: lightgray;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+p {
+    margin: 0;
+}
+.shopping_list {
+    width: 380px;
+    height: 700px;
+    font-size: 13px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    border: solid 2.5px #b0afb9;
+    border-radius: 7px;
+    box-shadow: 1px;
+}
+.nav {
+    height: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 7px 7px 0 0;
+    background-color: #13178c;
+    color: white;
+}
+
+.list {
+    height: 82%;
+    background-color: white;
+    color: #101052;
+    overflow-y: auto;
+    font-size:20px;
+    
+    
+}
+
+.content_box {
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.content {
+    padding-top: 20px;
+    padding-left: 3%;
+    display: inline-block;
+    width: 75%;
+}
+
+.delete {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    height: 100%;
+    width: 10%;
+    height: 40px;
+    background-image: url('trash_can.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.input {
+    height: 8%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: rgb(238, 238, 238);
+    border-radius: 0 0 7px 7px;
+}
+
+.insert {
+    height: 50%;
+    width: 80%;
+}
+
+.submit {
+    width: 12%;
+    height: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: solid 1px ;
+    border-radius: 3px;
+    background-color: gray;
+    color: white;
+    font-size: 13px;
+}
+
+img {
+    width:30px;
+    height:30px;
+}

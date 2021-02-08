@@ -1,0 +1,50 @@
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding:0;
+}
+li {
+    margin: 0;
+}
+body {
+    margin: 0;
+}
+.header {
+    height: 75px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+    background: #0f65ac;
+}
+
+.icon {
+    height: 100%;
+    width: 25%;
+    border-right: solid 1px palegoldenrod;
+}
+
+.menu {
+    height: 100%;
+    width: 60%;
+    border-right: solid 1px palegoldenrod;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.item {
+    height: 100%;
+    width: 25%;
+    padding: 0;
+    border-right: solid 1px white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 20px;
+}
+.socials {
+    height:100%;
+    width: 15%;
+}
