@@ -1,0 +1,41 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 300px;
+            height: 300px;
+            margin: 10px;;
+            background-color: thistle;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <input type="checkbox">
+    </div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <script>
+        document.addEventListener('wheel', event => {
+            console.log('scrolling'); 
+            // event.preventDefault();
+        }, {passive: false}) // passive 옵션을 false로 두면 원래 passive 였던 것이 active로 바뀌어서 peventDefault를 사용할 수 있음. 
+        const checkbox = document.querySelector('input');
+        checkbox.addEventListener('click', event => {
+            console.log('checked!!');
+            event.preventDefault(); // browser의 이벤트를 사용할 수 없게 만듦.(브라우저가 움직이지 않음....), 이게 왜필요한거?
+        })
+    </script>
+</body>
+</html>
