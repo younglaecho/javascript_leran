@@ -1,7 +1,6 @@
 const startBtnbox = document.querySelector('.start_button_box');
 const startBtn = document.querySelector('.start_button');
 const timer = document.querySelector('.timer');
-const counter = document.querySelector('.count');
 const gameBox = document.querySelector('.game_box');
 const img = document.querySelector('img')
 const bgm = document.querySelector('#bgm');
@@ -9,7 +8,7 @@ const winSound = document.querySelector('#win');
 const loseSound = document.querySelector('#lose');
 
 
-
+const counter = document.querySelector('.count');
 counter.innerText = 10;
 
 let settime;
@@ -81,6 +80,17 @@ function showResult(result) {
     clearInterval(setinterval);
 }
 
+
+function pullSound (object) {
+    const sound = document.createElement('audio');
+    sound.src = `sound/${object}_pull.mp3`;
+    document.body.appendChild(sound);
+    sound.play();
+    sound.onended = function () {
+        sound.remove();
+    }
+}
+
 startBtnbox.addEventListener('click', event => {
     if (event.target.classList.contains('start_button')) {
         const startBtn = document.querySelector('.start_button')
@@ -104,15 +114,6 @@ startBtnbox.addEventListener('click', event => {
     }
 })
 
-function pullSound (object) {
-    const sound = document.createElement('audio');
-    sound.src = `sound/${object}_pull.mp3`;
-    document.body.appendChild(sound);
-    sound.play();
-    sound.onended = function () {
-        sound.remove();
-    }
-}
 gameBox.addEventListener('click', event => {
     if(event.target.classList.contains('bug_image')) {
         event.target.remove();
