@@ -13,7 +13,10 @@ document.addEventListener("DOMContentLoaded", function () {
       setTimeout(() => {
         lazyImages = lazyImages
           .map((lazyImage) => {
-            if (lazyImage.getBoundingClientRect().top <= window.innerHeight) {
+            if (
+              lazyImage.getBoundingClientRect().top <= window.innerHeight &&
+              window.getComputedStyle(lazyImage).display !== "none"
+            ) {
               lazyImage.src = lazyImage.dataset.src;
               lazyImage.classList.remove("lazy");
               return null;
