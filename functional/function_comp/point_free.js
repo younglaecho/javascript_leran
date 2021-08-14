@@ -19,9 +19,10 @@ const 친구들 = [
   },
 ];
 const t = 친구들.map((e) => (e.do === "개발자" ? e : null)).filter((e) => e);
+console.log(t);
+
 const prop = (key) => (obj) => obj[key];
 const propEqual = (value) => (key) => (obj) => prop(key)(obj) === value;
-console.log(t);
 
 const t2 = go(친구들, L.filter(propEqual("개발자")("do")), L.takeAll);
 console.log(t2);
