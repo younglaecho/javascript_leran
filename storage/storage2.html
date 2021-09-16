@@ -1,0 +1,18 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      console.log(localStorage.getItem("name"));
+      console.log(sessionStorage.getItem("name2"));
+
+      // 문자열화 된 배열을 JSON.parse를 이용하여 다시 배열로 돌림.
+      console.log(JSON.parse(localStorage.getItem("arr")));
+      // 문서는 다르지만, 갱신은 같은 스토리지에 반영됩니다.
+    </script>
+  </body>
+</html>

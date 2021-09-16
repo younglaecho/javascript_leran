@@ -1,0 +1,33 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      if (typeof Storage !== "undefined") {
+        // localStorage => 같은 도메인 내에서 페이지를 이동하더라고 읽어올 수 있음. 페이지를 끄더라도 그대로 그 기기에 남아있음.
+        // 사용자 테마, 사용자 언어를 선택할 떄
+        localStorage.setItem("name", "Youngrae Cho");
+
+        // sessionStorage => 페이지를 끄면 만료됨.
+        // 조회 페이지의 조회 조건을 유지할 떄 등 탭이 사라지면 없어지길 원하는 것...
+        sessionStorage.setItem("name2", "Youngrae Cho");
+
+        // 객체나 배열을 저정하고 싶을 때는 아래와 같이 JSON을 문자열화하여 사용할 수 있다.
+        let arr = ["a", "b"];
+        localStorage.setItem("arr", JSON.stringify(arr));
+
+        window.onstorage = (event) => {
+          // window.addEventListener('storage', () => {와 같습니다.
+          if (event.key != "now") return;
+          alert(event.key + ":" + event.newValue + " at " + event.url);
+        };
+
+        localStorage.setItem("now", Date.now());
+      }
+    </script>
+  </body>
+</html>
