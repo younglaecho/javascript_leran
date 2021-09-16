@@ -1,0 +1,53 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    canvas {
+      border: 1px solid black;
+    }
+  </style>
+</head>
+<body onload="draw()">
+  <canvas id="myCanvas1" width="150" height="150"></canvas>
+  <canvas id="myCanvas2" width="150" height="150"></canvas>
+  <canvas id="myCanvas3" width="150" height="150"></canvas>
+  <script>
+    let canvas1 = document.querySelector('#myCanvas1')
+    let canvas2 = document.querySelector('#myCanvas2')
+    let canvas3 = document.querySelector('#myCanvas3')
+
+    function draw () {
+      if (canvas1.getContext && canvas2.getContext && canvas3.getContext) {
+        let cnt1 = canvas1.getContext("2d")
+        cnt1.fillRect(25,25,100,100)
+        cnt1.clearRect(40,40,70,70)
+        cnt1.strokeRect(50,50,50,50)
+
+        let cnt2 = canvas2.getContext("2d")
+        cnt2.beginPath()
+        cnt2.moveTo(50,50)
+        cnt2.lineTo(100,75)
+        cnt2.lineTo(50, 0)
+        cnt2.closePath()
+        cnt2.fill()
+
+        let cnt3 = canvas3.getContext('2d')
+        cnt3.beginPath();
+        cnt3.arc(75, 75, 50, 0, Math.PI * 2, true); // Outer circle
+        cnt3.moveTo(105, 75)
+        cnt3.arc(75, 75, 30, 0, Math.PI, false)
+        cnt3.moveTo(65,60)
+        cnt3.arc(60, 60, 5, 0, Math.PI*2, true)
+        cnt3.moveTo(95,60)
+        cnt3.arc(90, 60, 5, 0, Math.PI*2, true)
+        cnt3.stroke();
+        
+      }
+    }
+    
+  </script>
+</body>
+</html>

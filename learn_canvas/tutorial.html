@@ -1,0 +1,32 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    canvas {
+      border: 1px solid black;
+    }
+  </style>
+</head>
+<body onclick="draw()">
+  <canvas id="myCanvas" width="150" height="100"></canvas>
+  <script>
+    let canvas = document.querySelector('#myCanvas')
+    function draw () {
+      if (canvas.getContext) {
+        let context = canvas.getContext("2d")
+        
+        context.fillStyle = "rgb(200,0,0)"
+        context.fillRect(10,10,50,50)
+    
+        context.fillStyle="rgba(0,0,200,0.5)"
+        context.fillRect(30,30,50,50)
+
+      }
+
+    }
+  </script>
+</body>
+</html>
